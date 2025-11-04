@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8089';
   const res = await fetch(`${API_BASE}/api/auth/signin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -76,7 +76,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8089';
       const res = await fetch(`${API_BASE}/api/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -147,4 +147,5 @@ export const useAuth = () => {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
+
 };
